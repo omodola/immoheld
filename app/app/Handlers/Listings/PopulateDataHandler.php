@@ -55,7 +55,7 @@ class PopulateDataHandler extends BaseHandler
      */
     public function handle(array $args): array
     {
-        $size = $args['itemsToAdd'] ?? 10;
+        $size = $args['itemsToAdd'] ?? 11;
         while ($size >= 0){
             $dto = $this->listingDto::populateListingDataDto($args);
             if($dto->isValid()){

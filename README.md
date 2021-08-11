@@ -24,6 +24,6 @@ To run the application, ensure at the root of the /app there is a .env file, the
 	php spark serve
 
 # useful links
-    [/listings/populate]() - create  listings
-    [/listings/populate/{:x}]() - create x number of listings
+    [/listings/populate]() - create random listings with defined size 11
+    [/listings/populate/{:x}]() - create random x number of listings
     [/listings/{:id}}]() - get details of a listing given by the id
