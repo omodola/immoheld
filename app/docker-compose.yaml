@@ -1,0 +1,46 @@
+version: "3.9"
+
+networks:
+  backend-tier:
+  frontend-tier:
+
+services:
+  db:
+    image: postgres
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    env_file:
+      - .env
+    environment:
+      - env=local
+    container_name: $APP_NAME-postgres
+    networks:
+      - backend-tier
+    ports:
+      - $DB_PORT_EXTERNAL:$DB_PORT_INTERNAL
+
+  redis:
+    image: 'redis:alpine'
+    container_name: $APP_NAME-redis
+    networks:
+      - backend-tier
+    ports:
+      - $REDIS_PORT:$REDIS_PORT
+
+  web:
+    build: .
+    #command: sh -c "php spark serve"
+    env_file:
+      - .env
+    depends_on:
+      - db
+      - redis
+    container_name: $APP_NAME-web
+    networks:
+      - backend-tier
+      - frontend-tier
+    volumes:
+      - '.:/app'
+      - ./app:/var/www/html/app/
+    ports:
+      - $WEB_PORT_EXTERNAL:$WEB_PORT_INTERNAL

@@ -1,0 +1,55 @@
+body{
+	max-width:1600px;
+}
+
+body,h1,h2,h3,h4,h5,h6 {
+	font-family: "Raleway", sans-serif
+	}
+
+#listings_sidebar{
+	z-index:3;
+	width:300px;
+}
+
+#page_listings{
+	margin-left:300px;
+}
+
+#dropdown_sort{
+	height:50px;
+	border-color:#f9d14d
+}
+
+#country{
+	display: inline-block;
+	width: 18em;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.real_estate_listings img{
+	width:100%;
+	height: 200px;
+}
+
+#details_page_content{
+	max-width:1200px;
+	margin-top:10px
+}
+
+#details_page_content_mobile{
+	margin-top:40px;
+}
+
+#details_page_content_image{
+	display:block;
+	margin:auto;
+	max-width: 800px;
+	width:100%;
+	height:auto
+}
+
+#details h4{
+	color:#f9d14d;
+}
